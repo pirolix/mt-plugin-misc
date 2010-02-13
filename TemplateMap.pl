@@ -1,17 +1,17 @@
-package MT::Plugin::OMV::FileInfo;
+package MT::Plugin::OMV::Template;
 
 use strict;
 use MT 4;
 use MT::Template::Context;
 
 use vars qw( $MYNAME $VERSION );
-$MYNAME = 'FileInfo';
+$MYNAME = 'Template';
 $VERSION = '0.01';
 
 ### BuildPage callback
 MT->add_callback ('BuildFileFilter', 9, undef, sub {
     my (undef, %args) = @_;
-    $args{Context}->stash ($MYNAME. '::file_info', $args{FileInfo});
+    $args{Context}->stash ($MYNAME. '::template', $args{Template});
     1;
 });
 
@@ -19,8 +19,8 @@ MT->add_callback ('BuildFileFilter', 9, undef, sub {
 MT::Template::Context->add_tag ($MYNAME => sub {
     my ($finfo, $column);
 
-    ($finfo = $_[0]->stash ($MYNAME. '::file_info'))
-        && ($column = $_[1]->{column} || 'url')
+    ($finfo = $_[0]->stash ($MYNAME. '::template'))
+        && ($column = $_[1]->{column} || 'name')
         && $finfo->can ($column)
         && $finfo->$column || '';
 });
