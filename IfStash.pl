@@ -15,7 +15,7 @@ my $plugin = __PACKAGE__->new({
     version => $VERSION,
     author_name => 'Open MagicVox.net',
     author_link => 'http://www.magicvox.net/',
-    doc_link => '',
+    doc_link => 'http://www.magicvox.net/archive/2011/01292201/',
     description => <<HTMLHEREDOC,
 <__trans phrase="Allow the conditional template tags which conclude whether the each stash is enable.">
 HTMLHEREDOC
