@@ -7,7 +7,7 @@ use MT::Util;
 
 use vars qw( $MYNAME $VERSION );
 $MYNAME = (split /::/, __PACKAGE__)[-1];
-$VERSION = '0.00_01';
+$VERSION = '0.01';
 
 use base qw( MT::Plugin );
 my $plugin = __PACKAGE__->new ({
@@ -48,7 +48,7 @@ MT::Template::Context->add_global_filter (gather_footnote => sub {
         my $index = scalar @$footnotes;
         sprintf $format->[0],
             sprintf qq{<a title="%s" name="$refer" href="#$anchor">$format->[1]</a>},
-                MT::Util::encode_html($_[0]), $index,$index, $index;
+                MT::Util::encode_html (MT::Util::remove_html($_[0])), $index,$index, $index;
     }->($2)!ge;
     $ctx->stash ($MYNAME. qq{::footnotes}, $footnotes);
     $text;
