@@ -1,4 +1,5 @@
 package MT::Plugin::OMV::JapaneseYear;
+# $Id$
 
 use strict;
 use MT::Template::Context;

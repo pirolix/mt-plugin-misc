@@ -1,4 +1,5 @@
 package MT::Plugin::OMV::QuickBrownFox;
+# $Id$
 
 use strict;
 

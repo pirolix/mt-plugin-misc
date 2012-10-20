@@ -1,4 +1,5 @@
 package MT::Plugin::OMV::IfStash;
+# $Id$
 
 use strict;
 use MT 3;

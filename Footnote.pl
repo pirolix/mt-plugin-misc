@@ -1,4 +1,5 @@
 package MT::Plugin::OMV::Footnote;
+# $Id$
 
 use strict;
 use MT 4;
