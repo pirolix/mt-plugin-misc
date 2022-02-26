@@ -6,7 +6,7 @@ use MT::Template::Context;
 
 use vars qw( $MYNAME $VERSION );
 $MYNAME = (split /::/, __PACKAGE__)[-1];
-$VERSION = '0.00_01';
+$VERSION = '0.00_02';
 
 use base qw( MT::Plugin );
 my $plugin = __PACKAGE__->new({
@@ -32,7 +32,8 @@ MT::Template::Context->add_global_filter (japanese_year => sub {
         '明治' => [ 1868_09_08, 1912_07_29 ],
         '大正' => [ 1912_07_30, 1926_12_24 ],
         '昭和' => [ 1926_12_25, 1989_01_07 ],
-        '平成' => [ 1989_01_08, 2999_12_31 ],
+        '平成' => [ 1989_01_08, 2019_04_30 ],
+        '令和' => [ 2019_05_01, 2999_12_31 ],
     );
 
     $date =~ s!(\d{8})!sub {
